@@ -1,0 +1,20 @@
+---
+
+- name: include global variable file
+  hosts: server
+  connection: local
+  tasks:
+  - block:
+    - include_vars: group_vars/single
+    when: ansible_os_family == "RedHat"
+
+  - block:
+    - include_vars: group_vars/three
+    when: node == 'multi'
+
+
+- name: test role
+  hosts: server
+  connection: local
+  roles:
+    - test

@@ -1,0 +1,26 @@
+---
+- block:
+  - include_vars: defaults/another.yml
+  when: ansible_os_family == "RedHat"
+
+- name: global variable from all
+  debug: var=global_main
+
+- name: default variable
+  debug: var=defaults_main
+
+- name: fixed variable
+  debug: var=vars_main
+
+- name: global single variable
+  debug: var=single_main
+
+- name: another main
+  debug: var=another_main
+
+- name: role global var file
+  debug: var=global_test_main
+
+- debug: var=ansible_host
+
+- debug: var=inventory_main

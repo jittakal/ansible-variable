@@ -1,0 +1,3 @@
+---
+global_main: I am from global variable
+node: multi
